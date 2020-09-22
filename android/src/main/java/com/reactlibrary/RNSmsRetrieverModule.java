@@ -184,7 +184,9 @@ public class RNSmsRetrieverModule extends ReactContextBaseJavaModule implements 
 		try {
 			getCurrentActivity().registerReceiver(
 					receiver,
-					new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION)
+					new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION),
+					"com.google.android.gms.auth.api.phone.permission.SEND",
+					null
 			);
 			Log.d(TAG, "Receiver Registered");
 			isReceiverRegistered = true;
